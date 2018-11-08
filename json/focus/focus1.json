@@ -1,0 +1,39 @@
+[
+  {
+    "photo":"img/focus/au1.jpg",
+    "author":"何坤",
+    "workNum":6,
+    "likeNum":226,
+    "focus1":"img/focus/focus1.png",
+    "focus2":"img/focus/focus5.png",
+    "focus3":"img/focus/focus4.png",
+    "focus4":"img/focus/focus7.png"
+  },
+  {"photo":"img/focus/au2.jpg",
+    "author":"王伟",
+    "workNum":6,
+    "likeNum":2260,
+    "focus1":"img/focus/focus2.png",
+    "focus2":"img/focus/focus6.png",
+    "focus3":" ",
+    "focus4":" "
+  },
+  {"photo":"img/focus/au3.jpg",
+    "author":"胡英杰",
+    "workNum":6,
+    "likeNum":226,
+    "focus1":"img/focus/focus3.png",
+    "focus2":"img/focus/focus7.png",
+    "focus3":"img/focus/focus4.png",
+    "focus4":" "
+  },
+  {"photo":"img/focus/au4.jpg",
+    "author":"蒋云臣",
+    "workNum":6,
+    "likeNum":226,
+    "focus1":"img/focus/focus4.png",
+    "focus2":"img/focus/focus8.png",
+    "focus3":" ",
+    "focus4":"img/focus/focus1.png"
+  }
+]

@@ -1,0 +1,303 @@
+<style>
+    .nav>a:nth-of-type(4){
+        color: #eea069;
+        background: url(img/index/comments1.png) no-repeat top center/contain;}
+
+</style>
+
+
+<!--<header data-ng-include="'public/header.html'"></header>-->
+<nav class="comListNav">
+    <div class="back" onclick="back()"></div>
+    <h1>指南 &nbsp;<span></span></h1>
+
+    <ul class="listNav">
+        <li data-ng-click="jump('/life')">生活</li>
+        <li data-ng-click="jump('/paint')">画画</li>
+        <li data-ng-click="jump('/aprilday')">四月天</li>
+        <li data-ng-click="jump('/way')">道路</li>
+        <li data-ng-click="jump('/guide')"  class="activeli">指南</li>
+        <li data-ng-click="jump('/world')">世界</li>
+        <li data-ng-click="jump('/monologue')">独白</li>
+    </ul>
+</nav>
+<p id="downloadTip" class="download-tip">1条新内容</p>
+<section class="time" data-ng-controller="time">
+    <h1><span class="yearshow">2017 年</span><span class="monthshow">&nbsp;8&nbsp;月</span>
+        <span class="timeDown"></span></h1>
+    <div class="timeList">
+        <div>滑到后请点击</div>
+        <form action="">
+            <ul>
+                <li>
+                    <div class="comli-swiper-container swiper-container">
+                        <div class="comli-swiper-wrapper swiper-wrapper year">
+                            <div class="comli-swiper-slide swiper-slide" data-year="2015">2015 年</div>
+                            <div class="comli-swiper-slide swiper-slide"  data-year="2016">2016 年</div>
+                            <div class="comli-swiper-slide swiper-slide"  data-year="2017">2017 年</div>
+
+                        </div>
+
+
+                    </div>
+                </li>
+                <li>
+                    <div class="comli-swiper-container swiper-container">
+                        <div class="comli-swiper-wrapper swiper-wrapper month" >
+                            <div class="comli-swiper-slide swiper-slide" data-month="1"> 1 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="2"> 2 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="3"> 3 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="4"> 4 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="5"> 5 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="6"> 6 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="7"> 7 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="8"> 8 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="9"> 9 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="10"> 10 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="11"> 11 月</div>
+                            <div class="comli-swiper-slide swiper-slide" data-month="12"> 12 月</div>
+
+                        </div>
+
+
+                    </div>
+                </li>
+            </ul>
+        </form>
+        <div class="true">确定</div>
+    </div>
+</section>
+
+<!--遮罩-->
+<section class="dark"></section>
+
+<section  class="lifecontent mescroll"  data-ng-controller="article"  id="mescroll" >
+    <div data-ng-repeat="a in article">
+        <h1>{{a.month}}</h1>
+        <div data-ng-repeat="b in a.data">
+            <a href="#/detail">
+                <div><img src="{{b.picShow}}" alt=""></div>
+                <ul>
+                    <li>{{b.title}}</li>
+                    <li>{{b.simple}}</li>
+                </ul>
+            </a>
+        </div>
+
+    </div>
+    <!--展示上拉加载的数据列表-->
+    <div id="newsList" class="news-list lifecontent">
+        <!--<li>-->
+        <!--<p>【话题1】标题标题标题标题</p>-->
+        <!--<p class="new-content">内容内容内容内容内容内容内容内容内容</p>-->
+        <!--</li>-->
+    </div>
+</section>
+
+
+
+
+<footer data-ng-include="'public/footer.html'"></footer>
+
+
+<script src="js/mescroll.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/mescroll-option.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript" charset="utf-8">
+    function back(){
+        window.history.go(-1);
+    }
+
+    $(function(){
+        //创建MeScroll对象
+        var mescroll = initMeScroll("mescroll", {
+            down:{
+                auto:false,//是否在初始化完毕之后自动执行下拉回调callback; 默认true
+                callback: downCallback //下拉刷新的回调
+            },
+            up: {
+                auto:true,//初始化完毕,是否自动触发上拉加载的回调
+                isBoth: true, //上拉加载时,如果滑动到列表顶部是否可以同时触发下拉刷新;默认false,两者不可同时触发; 这里为了演示改为true,不必等列表加载完毕才可下拉;
+                callback: upCallback //上拉加载的回调
+            }
+        });
+
+        /*下拉刷新的回调 */
+        function downCallback(){
+            //加载轮播数据..
+            //...
+            //加载列表数据
+            getListDataFromNet(0, 1, function(data){
+                //联网成功的回调,隐藏下拉刷新的状态
+                mescroll.endSuccess();
+                //设置列表数据
+                setListData(data, false);
+                //显示提示
+                $("#downloadTip").css("top","6rem");
+                setTimeout(function () {
+                    $("#downloadTip").css("top","4rem");
+                },2000);
+            }, function(){
+                //联网失败的回调,隐藏下拉刷新的状态
+                mescroll.endErr();
+            });
+        }
+
+        /*上拉加载的回调 page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
+        function upCallback(page){
+            //联网加载数据
+            console.log("page.num="+page.num);
+            getListDataFromNet(page.num, page.size, function(data){
+                //联网成功的回调,隐藏上拉加载的状态
+                mescroll.endSuccess(data.length);//传参:数据的总数; mescroll会自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
+                //设置列表数据
+                setListData(data, true);
+            }, function(){
+                //联网失败的回调,隐藏上拉加载的状态
+                mescroll.endErr();
+            });
+        }
+
+        /*设置列表数据*/
+        function setListData(data, isAppend) {
+            var listDom=document.getElementById("newsList");
+            for (var i = 0; i < data.length; i++) {
+                var newObj=data[i];
+
+
+
+
+                var str="<div>" +
+                        "<a href='#/detail'>" +
+                        "<div><img src='"+newObj.img+"'></div>" +
+                        "<ul><li>"+newObj.title+"</li><li>"+newObj.simple+"</li></ul></a></div>";
+//            str+='<p class="new-content">'+newObj.content+'</p>';
+                var liDom=document.createElement("div");
+                liDom.innerHTML=str;
+
+
+
+
+
+//            var str='<p>'+newObj.title+'</p>';
+//                str+='<p class="new-content">'+newObj.content+'</p>';
+//                var liDom=document.createElement("li");
+//                liDom.innerHTML=str;
+
+                if (isAppend) {
+                    listDom.appendChild(liDom);//加在列表的后面,上拉加载
+                } else{
+                    listDom.insertBefore(liDom, listDom.firstChild);//加在列表的前面,下拉刷新
+                }
+            }
+        }
+
+        /*联网加载列表数据*/
+        var downIndex=0;
+        function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
+            //延时一秒,模拟联网
+            setTimeout(function () {
+                try{
+                    var newArr=[];
+                    if(pageNum==0){
+                        //此处模拟下拉刷新返回的数据
+                        downIndex++;
+                        var newObj= {img:"img/community/nav1.png",title:"新增话题"+downIndex+" 新增话题", simple:"新增话题的内容"};
+                        newArr.push(newObj);
+                    }else{
+                        //此处模拟上拉加载返回的数据
+                        for (var i = 0; i < pageSize; i++) {
+                            var upIndex=(pageNum-1)*pageSize+i+1;
+                            var newObj= {img:"img/community/nav1.png",title:"新增话题"+downIndex+" 新增话题", simple:"新增话题的内容"};
+                            newArr.push(newObj);
+                            newArr.push(newObj);
+                        }
+                    }
+                    //联网成功的回调
+                    successCallback&&successCallback(newArr);
+                }catch(e){
+                    //联网失败的回调
+                    errorCallback&&errorCallback();
+                }
+            },2000)
+        }
+
+        //禁止PC浏览器拖拽图片,避免与下拉刷新冲突;如果仅在移动端使用,可删除此代码
+        document.ondragstart=function() {return false;}
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<script src="js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.comli-swiper-container', {
+
+        paginationClickable: true,
+        direction: 'vertical'
+    });
+</script>
+<script>
+
+    //    遮罩隐藏
+    $(".dark").hide();
+    //改变显示日期
+    $('.month>div').each(function(i){
+        $('.month>div').eq(i).hover(function () {
+            var b = $(this).text();
+
+            $('.monthshow').text(b);
+        })
+    });
+
+
+    $('.year>div').each(function(i){
+        $('.year>div').eq(i).hover(function () {
+            var b = $(this).text();
+
+            $('.yearshow').text(b);
+        })
+    });
+
+    //    显示时间
+    $(".timeList").hide();
+    $(".time>h1").click(function(){
+        $(".timeList").slideDown(300);
+        $(".dark").slideDown(600);
+    })
+
+    //收起时间
+    $(".true").click(function(){
+        $(".timeList").slideUp(300);
+        $(".dark").slideUp(600);
+    })
+
+
+
+
+
+
+    //显示分类
+    $(".listNav").hide();
+    $(".comListNav>h1").click(function(){
+        $(".listNav").slideToggle(300);
+        $(".dark").slideToggle(600);
+        $('.comListNav>h1>span').toggleClass('activeRotate');
+    });
+
+    //    点击遮罩收回所有
+    $(".dark").click(function(){
+        $(".listNav").slideUp(300);
+        $(".dark").slideUp(600);
+        $(".timeList").slideUp();
+        $('.comListNav>h1>span').toggleClass('activeRotate');
+    })
+
+</script>

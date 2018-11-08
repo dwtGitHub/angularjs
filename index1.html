@@ -1,0 +1,220 @@
+<style>
+    .nav>a:nth-of-type(1){
+        color: #eea069;
+        background: url(img/index/color1.png) no-repeat top center/contain;}
+    
+</style>
+
+
+<header data-ng-include="'public/header.html'"></header>
+<!--banner-->
+<section id="banner"><div class="banner">
+    <!-- Swiper -->
+    <div class="swiper-container swiper-container1">
+        <div class="swiper-wrapper swiper-wrapper1" data-ng-controller="swiper1">
+            <div class="swiper-slide swiper-slide1" data-ng-repeat="a in index">
+                <img src='{{a.swiper1}}' alt="">
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination1"></div>
+    </div>
+</div>
+</section >
+<!--内容-->
+<section class="content">
+    <div>
+        <a href="#/senxi">画像</a>
+        <a href="#/senxi">定制</a>
+        <a href="#/senxi">买画</a>
+    </div>
+    <div class="title">
+        <h1  >热门标签<span data-ng-click="jump('/senxi')">more</span></h1>
+        <div class="label">
+
+
+
+            <!--Swiper-->
+            <div class="swiper-container swiper-container2">
+                <div class="swiper-wrapper swiper-wrapper2"  data-ng-controller="label1">
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="#/qingxin">#清新</a></div>
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="#/weimei">#唯美</a></div>
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="#/rixi">#日系</a></div>
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="#/oumeifeng">#欧美风</a></div>
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="#/senxi">#复古</a></div>
+                    <div class="swiper-slide swiper-slide2">
+                        <a href="#/senxi">#森系</a></div>
+                    <!--<div class="swiper-slide swiper-slide2"  data-ng-repeat="b in indexlabel">-->
+                    <!--<a href="#">{{b.label}}</a></div>-->
+                </div>
+                <!-- Add Pagination -->
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!--推荐关注与阅读-->
+<section>
+    <div class="title">
+        <h1>推荐关注与订阅<span data-ng-click="jump('/focus')">more</span></h1>
+    </div>
+    <div class="focus_swiper">
+        <!--Swiper -->
+        <div class="swiper-container swiper-container3">
+            <div class="swiper-wrapper swiper-wrapper3" data-ng-controller="swiper3">
+                <div class="swiper-slide swiper-slide3" data-ng-repeat="b in indexfocus">
+                    <a href="#/focus" style="display: block;">
+                        <div class="img1"><img src="{{b.swiper3}}" alt=""></div>
+                        <h1>{{b.h1}}</h1>
+                        <h2>{{b.h2}}</h2></a>
+                </div>
+            </div>
+        </div>
+        <!--Swiper -->
+
+
+    </div>
+</section>
+<!--看展-->
+<section>
+    <div class="title">
+        <h1>画展<span>more</span></h1>
+    </div>
+    <div class="show">
+        <!-- Swiper -->
+        <div class="swiper-container swiper-container4">
+            <div class="swiper-wrapper swiper-wrapper4" data-ng-controller="swiper4">
+
+                <div class="swiper-slide swiper-slide4" data-ng-repeat="c in indexshow">
+                    <div><img src="{{c.swiper4}}" alt=""></div>
+                    <h1>{{c.h1}}</h1>
+                    <h2>{{c.h2}}</h2></div>
+            </div>
+            <!-- Add Pagination -->
+            <!--<div class="swiper-pagination swiper-pagination4"></div>-->
+        </div>
+
+    </div>
+</section>
+<!--画画-->
+<section>
+    <div class="title">
+        <h1>一起画画吧<span>more</span></h1>
+    </div>
+    <div class="show2">
+        <!-- Swiper -->
+        <div class="swiper-container swiper-container5">
+            <div class="swiper-wrapper swiper-wrapper5" data-ng-controller="swiper5">
+
+                <div class="swiper-slide swiper-slide5" data-ng-repeat="c in indexplant">
+                    <div><img src="{{c.swiper4}}" alt=""></div>
+                    <h1>{{c.h1}}</h1>
+                    <h2>{{c.h2}}</h2></div>
+
+
+
+                <!--<div class="swiper-slide swiper-slide4">Slide 1</div>-->
+                <!--<div class="swiper-slide swiper-slide4">Slide 1</div>-->
+                <!--<div class="swiper-slide swiper-slide4">Slide 1</div>-->
+
+            </div>
+            <!-- Add Pagination -->
+            <!--<div class="swiper-pagination swiper-pagination4"></div>-->
+        </div>
+
+    </div>
+
+</section>
+<footer data-ng-include="'public/footer.html'"></footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/swiper.min.js"></script>
+<script>
+
+
+        var swiper1 = new Swiper('.swiper-container1', {
+            pagination: '.swiper-pagination1',slidesPerView: 1,
+            paginationClickable: true,
+//            loop:true,
+            observer:true,
+            observeParents:true,
+            autoplay:4000,
+            autoplayDisableOnInteraction : false
+        });
+
+        var swiper2 = new Swiper('.swiper-container2', {
+            pagination: '.swiper-pagination2',
+            slidesPerView: 4,
+            centeredSlides: true,
+            paginationClickable: true,
+            spaceBetween: 30,
+            observer:true,
+            observeParents:true,
+            loop:true
+        });
+
+        var swiper3 = new Swiper('.swiper-container3', {
+            pagination: '.swiper-pagination3',
+            slidesPerView:2,
+            centeredSlides: true,
+            paginationClickable: true,
+            touchRatio:1,longSwipesRatio: 0.3,
+            spaceBetween: 15,
+            observer:true,
+            observeParents:true,
+            autoplay:5000,
+            autoplayDisableOnInteraction : false
+
+
+//            loop:true
+        });
+        var swiper4 = new Swiper('.swiper-container4', {
+            pagination: '.swiper-pagination4',
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            paginationClickable: true,
+            spaceBetween: 30,
+//            loop:true,
+            observer:true,loopedSlides :10,
+            observeParents:true,
+            autoplay:6000,
+            autoplayDisableOnInteraction : false
+        });
+
+        var swiper5 = new Swiper('.swiper-container5', {
+            pagination: '.swiper-pagination5',
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            paginationClickable: true,
+            spaceBetween: 30,
+//            loop:true,
+            observer:true,loopedSlides :10,
+            observeParents:true,
+            autoplay:6000,
+            autoplayDisableOnInteraction : false
+        });
+
+
+
+</script>

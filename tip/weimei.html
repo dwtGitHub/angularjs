@@ -1,0 +1,355 @@
+
+<style>
+    .nav>a:nth-of-type(1){
+        color: #eea069;
+        background: url(img/index/color1.png) no-repeat top center/contain;}
+
+</style>
+
+
+<!--添加图片-->
+<link rel="stylesheet" type="text/css" href="css/webuploader.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<link rel="stylesheet" href="css/senxi.css">
+
+<script type="text/javascript" src="js/webuploader.js"></script>
+<script type="text/javascript" src="js/upload.js"></script>
+
+
+<header data-ng-include="'public/header.html'"></header>
+
+<section class="senxiT">
+    <div class="senxiNav clearFix">
+        <div class="swiper-container senxiSwiper-container1">
+            <div class="swiper-wrapper senxiSwiper-wrapper1">
+                <div class="swiper-slide senxiSwiper-slide1" data-ng-click="jump('/qingxin')">清新</div>
+                <div class="swiper-slide senxiSwiper-slide1 swiperCurrent" data-ng-click="jump('/weimei')">唯美</div>
+                <div class="swiper-slide senxiSwiper-slide1" data-ng-click="jump('/rixi')">日系</div>
+                <div class="swiper-slide senxiSwiper-slide1" data-ng-click="jump('/oumeifeng')">欧美风</div>
+                <div class="swiper-slide senxiSwiper-slide1" data-ng-click="jump('/senxi')">森系</div>
+            </div>
+        </div>
+        <div class="nav-right"></div><!--下拉图标-->
+        <ul class="nav-bottom clearFix">
+            <li><a href="javascript:;">欧美1</a></li>
+            <li><a href="javascript:;">日系2</a></li>
+            <li><a href="javascript:;">唯美3</a></li>
+            <li><a href="javascript:;">清新4</a></li>
+            <li><a href="javascript:;">唯美5</a></li>
+            <li><a href="javascript:;">唯美6</a></li>
+            <li><a href="javascript:;">唯美7</a></li>
+            <li><a href="javascript:;">唯美8</a></li>
+            <li><a href="javascript:;">唯美9</a></li>
+            <li><a href="javascript:;">唯美10</a></li>
+        </ul>
+    </div>
+    <div class="color-bar1"></div><!--颜色条-->
+    <ul class="swiperTab">
+        <!--清新-->
+        <!--<li>1</li>-->
+        <!--&lt;!&ndash;唯美&ndash;&gt;-->
+        <!--<li>2</li>-->
+        <!--&lt;!&ndash;日系&ndash;&gt;-->
+        <!--<li>3</li>-->
+        <!--&lt;!&ndash;欧美风&ndash;&gt;-->
+        <!--<li>4</li>-->
+        <!--&lt;!&ndash;森系&ndash;&gt;-->
+        <li class="swiperActive">
+            <div class="center1">
+                <div class="cent1-top clearFix">
+                    <div class="cent1-top-left">
+                        <h1>当下最火</h1>
+                    </div>
+                    <div class="cent1-top-right">
+                        <a href="#">more</a>
+                    </div>
+                </div>
+                <div class="swiper-container senxiSwiper-container2">
+                    <div class="swiper-wrapper senxiSwiper-wrapper2">
+                        <div class="swiper-slide senxiSwiper-slide2">
+                            <div><img src="img/community/nav1.png" alt=""></div>
+                            <p>清欢</p>
+                            <a href="javascript:;"><p>关注</p></a>
+                        </div>
+                        <div class="swiper-slide senxiSwiper-slide2">
+                            <div><img src="img/community/nav1.png" alt=""></div>
+                            <p>清欢</p>
+                            <a href="javascript:;"><p>关注</p></a>
+                        </div>
+                        <div class="swiper-slide senxiSwiper-slide2">
+                            <div><img src="img/community/nav1.png" alt=""></div>
+                            <p>清欢</p>
+                            <a href="javascript:;"><p>关注</p></a>
+                        </div>
+                        <div class="swiper-slide senxiSwiper-slide2">
+                            <div><img src="img/community/nav1.png" alt=""></div>
+                            <p>清欢</p>
+                            <a href="javascript:;"><p>关注</p></a>
+                        </div>
+                        <div class="swiper-slide senxiSwiper-slide2">
+                            <div><img src="img/community/nav1.png" alt=""></div>
+                            <p>清欢</p>
+                            <a href="javascript:;"><p>关注</p></a>
+                        </div>
+                        <div class="swiper-slide senxiSwiper-slide2">
+                            <div><img src="img/community/nav1.png" alt=""></div>
+                            <p>清欢</p>
+                            <a href="javascript:;"><p>关注</p></a>
+                        </div>
+                        <div class="swiper-slide senxiSwiper-slide2">
+                            <div><img src="img/community/nav1.png" alt=""></div>
+                            <p>清欢</p>
+                            <a href="javascript:;"><p>关注</p></a>
+                        </div>
+                        <div class="swiper-slide senxiSwiper-slide2">
+                            <div><img src="img/community/nav1.png" alt=""></div>
+                            <p>清欢</p>
+                            <a href="javascript:;"><p>关注</p></a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="color-bar2"></div><!--颜色条-->
+            <!--最热/最新-->
+            <div class="center3">
+                <div class="cent3-nav clearFix">
+                    <div class="tabs1">
+                        <span class="part active">最新</span>
+                        <span class="part">最热</span>
+                    </div>
+                    <div class="cent3-nav-i">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="swiper-container senxiSwiper-container3">
+                    <div class="swiper-wrapper senxiSwiper-wrapper3">
+                        <div class="swiper-slide senxiSwiper-slide3 senxiTouch1 swiper-slide-visible swiper-slide-active" data-ng-controller="senxi">
+                            <div class="senxiSlide3" data-ng-repeat="a in senxi">
+                                <div class="senxiSlide3Content">
+                                    <div class="senxiSlide3-head clearFix">
+                                        <div class="clearFix">
+                                            <div class="avatar"><img src="{{a.head}}" alt=""></div><!--人物头像-->
+                                            <p>{{a.title}}</p>
+                                        </div>
+                                        <span>关注</span>
+                                    </div>
+                                    <div class="senxiSlide3-content">
+                                        <p>{{a.article}}</p>
+                                        <a href="javascript:;">
+                                            <img src="{{a.pic}}" alt="">
+                                            <div><p>{{a.cover}}</p></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="line"></div><!--分割线-->
+                            </div>
+
+                        </div>
+                        <div class="senxihidden"></div> <!--处理的点-->
+                        <div class="swiper-slide senxiSwiper-slide3 senxiTouch2" data-ng-controller="senxi">
+
+
+                            <div class="hottest" data-ng-repeat="a in senxi">
+                                <div class="hottestContent">
+                                    <div class="hottest-head clearFix">
+                                        <div class="clearFix">
+                                            <div class="avatar"><img src="{{a.head}}" alt=""></div><!--人物头像-->
+                                            <p>{{a.title}}</p>
+                                        </div>
+                                        <span>关注</span>
+                                    </div>
+                                    <div class="hottest-content">
+                                        <p>{{a.article}}</p>
+                                        <div><img src="{{a.pic}}" alt=""></div>
+                                    </div>
+                                    <div class="hottest-menu clearFix">
+                                        <a href="#"><p>转发</p></a>
+                                        <a href="#"><p>评论</p></a>
+                                        <a href="#"><p>点赞</p></a>
+                                    </div>
+                                </div>
+                                <div class="line"></div><!--分割线-->
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ReleaseButton" onclick="ReleaseButtonClick()">
+                <div class="senxifloat"></div>
+            </div><!--添加按钮-->
+            <!--Popup:弹窗1-->
+            <div class="senxiPopup1" id="senxiPopup1">
+                <div class="senxiPopup1-Title">
+                    <p>世界很美</p>
+                    <p>而你正好有空</p>
+                    <div></div>
+                </div>
+                <div class="senxiPopup1-button">
+                    <a href="javascript:;" onclick="senxiPopup2Show()">
+                        <p>文章</p>
+                    </a>
+                    <a href="javascript:;" onclick="alert('待开发')">
+                        <p>音乐</p>
+                    </a>
+                </div>
+                <!--关闭按钮-->
+                <a href="javascript:;" class="senxiPopup1-close" onclick="jQuery('#senxiPopup1').hide()">
+                    <i></i>
+                </a>
+            </div>
+            <!--Popup:弹窗2-->
+            <div class="senxiPopup2" id="senxiPopup2">
+                <form action="#">
+                    <div class="senxiPopup2-top clearFix">
+                        <!--左上角-退出-->
+                        <a href="javascript:;" class="senxiPopup2-top-close" onclick="jQuery('#senxiPopup2').fadeOut()">
+                            <i></i>
+                        </a>
+                        <input class="senxiPopup2-top-release" type="button" value="发布" onclick="alert('提交功能待开发')">
+                    </div>
+                    <div class="senxiPopup2-content">
+                        <div id="wrapper">
+                            <div id="container">
+                                <!--头部，相册选择和格式选择-->
+
+                                <div id="uploader">
+                                    <div class="queueList">
+                                        <div id="dndArea" class="placeholder">
+                                            <div id="filePicker"></div>
+                                            <p>或将照片拖到这里，单次最多可选300张</p>
+                                        </div>
+                                    </div>
+                                    <div class="statusBar" style="display:none;">
+                                        <div class="progress">
+                                            <span class="text">0%</span>
+                                            <span class="percentage"></span>
+                                        </div><div class="info"></div>
+                                        <div class="btns">
+                                            <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="senxiPopup2Textarea">
+                            <textarea name="" id="" cols="30" rows="10" placeholder="这一刻，我想说......" ></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<footer data-ng-include="'public/footer.html'"></footer>
+
+
+<script src="js/idangerous.swiper.min.js"></script>
+<script>
+    /*顶部tab*/
+    $('.senxiSwiper-wrapper1>div').click(function(){
+        $(this).addClass('swiperCurrent').siblings('div').removeClass('swiperCurrent');
+//        $('.swiperTab>li').eq($(this).index()).addClass('swiperActive').siblings('li').removeClass('swiperActive');
+    });
+
+    // 控制下拉列表
+    $('.nav-right').click(function(){
+        $('.nav-bottom').slideToggle();
+        $('.nav-right').toggleClass('transform');
+    });
+
+    /*顶部：清新栏*/
+    var senxiSwiper1 = new Swiper('.senxiSwiper-container1', {
+        slidesPerView : '6'
+    });
+    /*当下最火*/
+    var senxiSwiper2 = new Swiper('.senxiSwiper-container2',{
+//        loop:true,
+        slidesPerView: 4,
+        paginationClickable: true
+    });
+    /*center3 最热/最新*/
+    $(function() {
+        var tabsSwiper;
+        tabsSwiper = new Swiper('.senxiSwiper-container3', {
+            speed : 500,
+            onSlideChangeStart : function() {
+                $(".tabs1 .active").removeClass('active');
+                $(".tabs1 span").eq(tabsSwiper.activeIndex).addClass('active');
+                /*判断 类里是否含后 "swiper-slide-active" 类，*/
+
+
+                if($(".senxiTouch1").hasClass("swiper-slide-active")==false){
+                    $(".senxiTouch1").css({"display":"none"});
+                    $(".senxihidden").css({"display":"block"})
+                }else{
+                    $(".senxiTouch1").css({"display":"block"});
+                    $(".senxihidden").css({"display":"none"})
+                }
+                if($(".senxiTouch2").hasClass("swiper-slide-active")==false){
+                    $(".senxiTouch2").css({"display":"none"});
+                    $(".senxihidden").css({"display":"block"})
+                }else{
+                    $(".senxiTouch2").css({"display":"block"});
+                    $(".senxihidden").css({"display":"block"})
+                }
+
+            }
+        });
+
+        $(".tabs1 span").on('touchstart mousedown', function(e) {
+            e.preventDefault();
+            $(".tabs1 .active").removeClass('active');
+            $(this).addClass('active');
+            tabsSwiper.swipeTo($(this).index());
+//            $(".senxihidden").addClass('senactive');
+
+            /*判断 类里是否含后 "swiper-slide-active" 类，*/
+            if($(".senxiTouch1").hasClass("swiper-slide-active")==false){
+
+                $(".senxiTouch1").css({"display":"none"});
+                $(".senxihidden").css({"display":"block"})
+            }else{
+                $(".senxiTouch1").css({"display":"block"});
+                $(".senxihidden").css({"display":"none"})
+            }
+            if($(".senxiTouch2").hasClass("swiper-slide-active")==false){
+
+                $(".senxiTouch2").css({"display":"none"});
+                $(".senxihidden").css({"display":"block"})
+            }else{
+                $(".senxiTouch2").css({"display":"block"});
+                $(".senxihidden").css({"display":"block"})
+            }
+
+        });
+
+        $(".tabs1 span").click(function(e) {
+            e.preventDefault();
+        });
+    });//end
+    //    $('#senxiPopup2').hide();
+    /*右下角添加按钮弹窗*/
+    /*遮罩层1*/
+    function ReleaseButtonClick(){
+        $('#senxiPopup1').fadeIn(300);
+    }
+    /*遮罩层2*/
+    function senxiPopup2Show(){
+        $('#senxiPopup1').hide();
+        $('#senxiPopup2').fadeIn(300);
+        $('#senxiPopup2').css({"opacity":1,"z-index":9998})
+    }
+</script>

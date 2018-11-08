@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="only">
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=yes,email=no" name="format-detection">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="wap-font-scale" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.4.2.min.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/module.js"></script>
+
+    <!--<script src="js/swiperquery.js"></script>-->
+    <link rel="stylesheet" href="css/mescroll.css">
+    <link rel="stylesheet" href="css/mescroll-option.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/focus.css">
+    <link rel="stylesheet" href="css/me.css">
+    <link rel="stylesheet" href="css/community.css">
+    <link rel="stylesheet" href="css/communityList.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+
+    <title>ONLY</title>
+    <style>
+        *{margin:0;padding:0;border:0}
+        *::after, *::before {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-box-sizing: border-box;
+        }
+
+        ul,ol{list-style: none}
+        img{
+            display: block;
+            width: 100%;}
+        a {
+            text-decoration: none;
+            color: #282828;
+        }
+        input, textarea {
+            resize: none;
+            outline: none; /*-webkit-appearance: none;*/
+        }
+
+        .clearFix::before, .clearFix::after {
+            content: '';
+            display: block;
+            clear: both;
+            visibility: hidden;
+            height: 0;
+            line-height: 0;
+        }
+    html,body{
+        font-size:62.5%;}
+
+    </style>
+</head>
+<body>
+<div data-ng-controller="parentCtrl" >
+    <div data-ng-view style="overflow: hidden;"  >
+
+    </div>
+</div>
+
+
+
+
+</body>
+
+
+<script>
+
+</script>
+
+</html>

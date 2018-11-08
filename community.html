@@ -1,0 +1,80 @@
+<style>
+    .nav>a:nth-of-type(4){
+        color: #eea069;
+        background: url(img/index/comments1.png) no-repeat top center/contain;}
+
+</style>
+
+
+<header data-ng-include="'public/header.html'"></header>
+<!--banner-->
+<section id="banner" class="communityBanner">
+    <div class="banner">
+    <!-- Swiper -->
+    <div class="swiper-container community-swiper-container1">
+        <div class="swiper-wrapper community-swiper-wrapper1" data-ng-controller="combanner" >
+            <div class="swiper-slide community-swiper-slide1" data-ng-repeat="a in combanner">
+                <img src='{{a.banner1}}' alt="">
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination community-swiper-pagination1"></div>
+    </div>
+</div>
+</section >
+<!--nav-->
+<nav class="com_nav">
+    <h1>分类导航</h1>
+    <ul class="navList">
+        <li data-ng-click="jump('/life')">    <p>生活</p>   </li>
+        <li data-ng-click="jump('/life')">    <p>画画</p>   </li>
+        <li data-ng-click="jump('/life')">    <p>四月天</p> </li>
+        <li data-ng-click="jump('/life')">    <p>道路</p>   </li>
+        <li data-ng-click="jump('/life')">    <p>指南</p>   </li>
+        <li data-ng-click="jump('/life')">    <p>世界</p>   </li>
+        <li data-ng-click="jump('/life')">    <p>独白</p>   </li>
+    </ul>
+</nav>
+<!--社区内容-->
+<section class="comShow" data-ng-controller="comShow">
+    <a href="#/detail" data-ng-repeat="a in comShow" >
+        <div class="picShow"><img src="{{a.picShow}}" alt=""></div>
+        <h1>{{a.title}}</h1>
+        <h2>{{a.class}}</h2>
+    </a>
+</section>
+
+<footer data-ng-include="'public/footer.html'"></footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/swiper.min.js"></script>
+<script>
+
+
+    var swiper1 = new Swiper('.community-swiper-container1', {
+        pagination: '.community-swiper-pagination1',slidesPerView: 1,
+        paginationClickable: true,
+//            loop:true,
+        observer:true,
+        observeParents:true,
+        autoplay:4000
+    });
+
+
+
+
+</script>

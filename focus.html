@@ -1,0 +1,185 @@
+
+<style>
+    .nav>a:nth-of-type(2){
+        color: #eea069;
+        background: url(img/index/pic1.png) no-repeat top center/contain;}
+
+</style>
+
+<header data-ng-include="'public/header.html'"></header>
+<!--关注-->
+<section>
+    <!--tab-->
+<div class="cent3-nav clearFix">
+    <div class="tabs">
+        <span class="part active">推荐关注</span>
+        <span class="part">推荐订阅</span>
+    </div>
+
+</div>
+
+<div class="swiper-container swiper-container6">
+    <div class="swiper-wrapper swiper-wrapper6">
+        <div class="swiper-slide swiper-slide6 swiper-slide-visible swiper-slide-active focusTouch" >
+            <div class="content-slide" data-ng-controller="focus1">
+              <div data-ng-repeat="a in focus1">
+            <div class="focus_title">
+                <div class="circle">
+                    <img src="{{a.photo}}" alt="">
+                </div>
+                <div class="focus_name">
+                    <h1>{{a.author}}</h1>
+                    <h2>作品：{{a.workNum}} <span> &nbsp;&nbsp;&nbsp;被喜欢：{{a.likeNum}}</span></h2>
+                </div>
+                <form action="" class="focus_btn">
+                    <input type="button" value="关注">
+                </form>
+            </div>
+            <div class=" focus-swiper-container1">
+                    <div class=" focus-swiper-wrapper1">  <!--data-ng-controller="focusswiper1" -->
+                        <div class=" focus-swiper-slide1"  data-ng-hidden=" ">
+                            <img src="{{a.focus1}}" alt="" style="" class="img">
+                        </div>
+                        <div class=" focus-swiper-slide1" data-ng-hidden=" ">
+                            <img src="{{a.focus2}}" alt="" style="" class="img">
+                        </div>
+                        <div class=" focus-swiper-slide1"  data-ng-hidden=" ">
+                            <img src="{{a.focus3}}" alt="" style="" class="img">
+                        </div>
+                        <div class=" focus-swiper-slide1"  data-ng-hidden=" ">
+                            <img src="{{a.focus4}}" alt="" style="" class="img">
+                        </div>
+                    </div>
+                </div>
+            <div class="focus_line"></div>
+              </div>
+
+
+
+            </div>
+        </div>
+        <div class="focushidden"></div>
+        <div class="swiper-slide swiper-slide6 focusTouch1">
+            <div class="content-slide" data-ng-controller="take">
+                <div data-ng-repeat="a in take">
+                    <div class="focus_title">
+                        <div class="circle">
+                            <img src="{{a.photo}}" alt="">
+                        </div>
+                        <div class="focus_name">
+                            <h1>{{a.author}}</h1>
+                            <h2>作品：{{a.workNum}} <span> &nbsp;&nbsp;&nbsp;艺术家：{{a.artNum}}</span></h2>
+                        </div>
+                        <form action="" class="focus_btn">
+                            <input type="button" value="订阅">
+                        </form>
+                    </div>
+                    <div class=" focus-swiper-container1">
+                        <div class=" focus-swiper-wrapper1">  <!--data-ng-controller="focusswiper1" -->
+                            <div class=" focus-swiper-slide1"  data-ng-hidden=" ">
+                                <img src="{{a.focus1}}" alt="" style="" class="img">
+                            </div>
+                            <div class=" focus-swiper-slide1" data-ng-hidden=" ">
+                                <img src="{{a.focus2}}" alt="" style="" class="img">
+                            </div>
+                            <div class=" focus-swiper-slide1"  data-ng-hidden=" ">
+                                <img src="{{a.focus3}}" alt="" style="" class="img">
+                            </div>
+                            <div class=" focus-swiper-slide1"  data-ng-hidden=" ">
+                                <img src="{{a.focus4}}" alt="" style="" class="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="focus_line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+<footer data-ng-include="'public/footer.html'"></footer>
+
+
+
+<script src="js/idangerous.swiper.min.js"></script>
+
+<script>
+    //                            window.onload=function(){
+    //                                var img=$('img');
+    //                                if(img.src===""){
+    //                                    img.parentNode(".focus-swiper-slide1").css({"display":"none"})
+    //                                }
+    //                            }
+
+
+</script>
+<script>
+    $(function() {
+        var tabsSwiper;
+        tabsSwiper = new Swiper('.swiper-container6', {
+            speed : 500,
+            onSlideChangeStart : function() {
+                $(".tabs .active").removeClass('active');
+                $(".tabs span").eq(tabsSwiper.activeIndex).addClass('active');
+                if($(".focusTouch").hasClass("swiper-slide-active")==false){
+                    $(".focusTouch").css({"display":"none"});
+                    $(".focushidden").css({"display":"block"})
+                }else{
+                    $(".focusTouch").css({"display":"block"});
+                    $(".focushidden").css({"display":"none"})
+                }
+                if($(".focusTouch1").hasClass("swiper-slide-active")==false){
+                    $(".focusTouch1").css({"display":"none"});
+                    $(".focushidden").css({"display":"block"})
+                }else{
+                    $(".focusTouch1").css({"display":"block"});
+                    $(".focushidden").css({"display":"block"})
+                }
+            }
+        });
+
+        $(".tabs span").on('touchstart mousedown', function(e) {
+            e.preventDefault();
+            $(".tabs .active").removeClass('active');
+            $(this).addClass('active');
+            tabsSwiper.swipeTo($(this).index());
+//            $(".focushidden").addClass('activeshow')
+//            console.log($(".focusTouch").hasClass("swiper-slide-active"));
+            if($(".focusTouch").hasClass("swiper-slide-active")==false){
+
+                $(".focusTouch").css({"display":"none"});
+                $(".focushidden").css({"display":"block"})
+            }else{
+                $(".focusTouch").css({"display":"block"});
+                $(".focushidden").css({"display":"none"})
+            }
+            if($(".focusTouch1").hasClass("swiper-slide-active")==false){
+
+                $(".focusTouch1").css({"display":"none"});
+                $(".focushidden").css({"display":"block"})
+            }else{
+                $(".focusTouch1").css({"display":"block"});
+                $(".focushidden").css({"display":"block"})
+            }
+        });
+
+        $(".tabs span").click(function(e) {
+            e.preventDefault();
+        });
+    });//end
+
+</script>
+<script>
+
+
+
+</script>

@@ -1,0 +1,31 @@
+[
+  {
+    "photo":"img/focus/author1.png",
+    "author":"中央美术学院",
+    "workNum":6,
+    "artNum":226,
+    "focus1":"img/focus/take1.png",
+    "focus2":"img/focus/take2.png",
+    "focus3":"img/focus/take3.png",
+    "focus4":"img/focus/take4.png"
+  },
+  {"photo":"img/focus/author2.png",
+    "author":"中国蓝画书社",
+    "workNum":6,
+    "artNum":2260,
+    "focus1":"img/focus/take5.png",
+    "focus2":"img/focus/take6.png",
+    "focus3":" ",
+    "focus4":" "
+  },
+  {"photo":"img/focus/author3.png",
+    "author":"中国美术学院",
+    "workNum":6,
+    "artNum":226,
+    "focus1":"img/focus/take7.png",
+    "focus2":"img/focus/take8.png",
+    "focus3":"img/focus/take9.png",
+    "focus4":" "
+  }
+
+]
